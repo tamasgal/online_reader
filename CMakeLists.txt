@@ -9,4 +9,4 @@ set_target_properties(choo PROPERTIES COMPILE_FLAGS "-Wno-unused-variable")
 
 add_executable(OnlineReader OnlineReader.cxx)
 target_link_libraries (OnlineReader LINK_PUBLIC choo )
-target_include_directories(OnlineReader PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+#target_include_directories(OnlineReader PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
