@@ -2,20 +2,18 @@
 #define ONLINEREADER_H
 
 #include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
 #include <string>
 
 #include "controlhost/choo.h"
 
 void connect(ControlHost *& ch) {
     std::cout << "Creating control host client." << std::endl;
+    std::string subscription = "a MSG";
     ControlHost::Throw(true);
     try {
         ch = new ControlHost ("131.188.167.62", 5553);
         ch->MyId("OnlineReader");
-        ch->Subscribe("a MSG");
+        ch->Subscribe(subscription);
         ch->SendMeAlways();
         std::cout << "Client ready." << std::endl;
     } catch (ControlHost::Exception error) {
