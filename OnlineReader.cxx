@@ -30,6 +30,10 @@ int main(int argc, char **argv)
 
     connect(ch);
 
+    if(!ch) {
+        return -1;
+    }
+
     std::cout << "Checking connection." << std::endl;
     if (ch->Connected()) {
         std::cout << "Connected to Ligier" << std::endl;
